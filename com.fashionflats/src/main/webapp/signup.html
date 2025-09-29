@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Fashion Flats Registration</title>
+  <link rel="icon" href="icon.png">
+  <link rel="stylesheet" href="signup.css">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <header>
+    <img class="logo" src="logoreg.png" alt="Fashion Flats Logo" usemap="#amazonlink">
+    <map name="amazonlink">
+      <area shape="rect" coords="10,10,300,300" href="https://www.amazon.in/ref=ap_frn_logo" alt="Amazon Link">
+    </map>
+  </header>
+
+  <main>
+    <div class="form-box">
+      <h1>Create Account</h1>
+      <form method="POST" action="/login.Signup">
+        <label for="name">Your Name</label>
+        <input type="text" id="name" name="name" placeholder="First and last name" required>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+        <label for="pword">Password</label>
+        <input type="password" id="pword" name="pword" placeholder="At least 6 characters" >
+
+        <label for="confirm_password">Confirm Password</label>
+        <input type="password" id="confirm_password" name="confirm_password" required>
+        <small id="passwordError" style="color: red; display: none;"></small>
+
+        <input type="submit" value="Create your Fashion Flats account">
+
+        <p class="terms">
+          By creating an account or logging in, you agree to
+          Fashion Flats’s <a href="#">Conditions of Use</a> and <a href="#">Privacy Policy</a>.
+        </p>
+
+        <p class="signin-link">
+          Already have an account? <a href="signin.html">Sign in</a>
+        </p>
+      </form>
+    </div>
+  </main>
+
+  <script>
+    const form = document.querySelector("form");
+    const password = document.getElementById("pword");
+    const confirmPassword = document.getElementById("confirm_password");
+    const passwordError = document.getElementById("passwordError");
+
+    form.addEventListener("submit", function (e) {
+      if (password.value !== confirmPassword.value) {
+        e.preventDefault();
+        passwordError.textContent = "Passwords do not match.";
+        passwordError.style.display = "block";
+        confirmPassword.focus();
+      } else {
+        passwordError.style.display = "none";
+      }
+    });
+  </script>
+
+</body>
+</html>
