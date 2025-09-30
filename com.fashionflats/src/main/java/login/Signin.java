@@ -10,7 +10,7 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.*;
 
-@WebServlet("/Signin")
+@WebServlet("/Sign In")
 public class Signin extends HttpServlet {
     private static final long serialVersionUID = 1L;
     private Connection con;
